@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 { margin: 0; }
+header p { color: #bdc3c7; font-size: 1.1rem; }
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* 分頁按鈕 */
+.tab {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab button {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.tab button:hover { background-color: #ccc; }
+.tab button.active { background-color: var(--accent-color); color: white; }
+
+.tabcontent {
+    display: none;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;} to {opacity: 1;}
+}
+
+.tabcontent h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 乾淨的卡片排版 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer; /* 讓滑鼠變成手指，提示可點擊 */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: #333;
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+/* 重置按鈕 */
+.reset-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto 20px auto;
+    padding: 12px 20px;
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.reset-btn:hover { background-color: var(--accent-color); }
+
+/* --- 彈出視窗 (Modal) 設計 --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px); /* 背景模糊效果 */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px; top: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover { color: #333; }
+
+.modal-content img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-tracker {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.weight-control, .sets-control {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.weight-control input {
+    width: 80px;
+    padding: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+}
+
+.sets-control input[type="checkbox"] {
+    width: 24px; height: 24px;
+    margin: 0 4px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+    vertical-align: middle;
+}

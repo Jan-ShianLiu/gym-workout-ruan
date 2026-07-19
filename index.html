@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阮的專屬健身菜單</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>💪 阮的專屬健身菜單</h1>
+        <p>每項動作皆為 <strong>5組 / 12下</strong></p>
+    </header>
+
+    <main>
+        <!-- 分頁按鈕 -->
+        <div class="tab">
+            <button class="tablinks active" onclick="openDay(event, 'Day1')">Day 1: 胸肩</button>
+            <button class="tablinks" onclick="openDay(event, 'Day2')">Day 2: 臀腿</button>
+            <button class="tablinks" onclick="openDay(event, 'Day3')">Day 3: 背</button>
+        </div>
+
+        <!-- Day 1 內容 -->
+        <div id="Day1" class="tabcontent" style="display: block;">
+            <h2>胸肩訓練 (請任選 3 個動作)</h2>
+            <div class="grid-container">
+                <div class="card" onclick="openModal('蝴蝶機夾胸', 'assets/images/蝴蝶機夾胸.gif')"><img src="assets/images/蝴蝶機夾胸.gif" alt="蝴蝶機夾胸" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'"><h3>蝴蝶機夾胸</h3></div>
+                <div class="card" onclick="openModal('下斜卧推', 'assets/images/下斜卧推.gif')"><img src="assets/images/下斜卧推.gif" alt="下斜卧推"><h3>下斜卧推</h3></div>
+                <div class="card" onclick="openModal('上斜臥推', 'assets/images/上斜臥推.gif')"><img src="assets/images/上斜臥推.gif" alt="上斜臥推"><h3>上斜臥推</h3></div>
+                <div class="card" onclick="openModal('坐姿肩推', 'assets/images/坐姿肩推.gif')"><img src="assets/images/坐姿肩推.gif" alt="坐姿肩推"><h3>坐姿肩推</h3></div>
+                <div class="card" onclick="openModal('機械側平舉', 'assets/images/機械側平舉.gif')"><img src="assets/images/機械側平舉.gif" alt="機械側平舉"><h3>機械側平舉</h3></div>
+            </div>
+            <button class="reset-btn" onclick="resetDay('Day1')">🔄 重置 Day 1 紀錄</button>
+        </div>
+
+        <!-- Day 2 內容 -->
+        <div id="Day2" class="tabcontent">
+            <h2>臀腿訓練 (請任選 3 個動作)</h2>
+            <div class="grid-container">
+                <div class="card" onclick="openModal('器械反向哈克深蹲', 'assets/images/器械反向哈克深蹲.gif')"><img src="assets/images/器械反向哈克深蹲.gif" alt="器械反向哈克深蹲" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'"><h3>器械反向哈克深蹲</h3></div>
+                <div class="card" onclick="openModal('器械式哈克深蹲', 'assets/images/器械式哈克深蹲.gif')"><img src="assets/images/器械式哈克深蹲.gif" alt="器械式哈克深蹲" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'"><h3>器械式哈克深蹲</h3></div>
+                <div class="card" onclick="openModal('水平腿推', 'assets/images/水平腿推.gif')"><img src="assets/images/水平腿推.gif" alt="水平腿推"><h3>水平腿推</h3></div>
+                <div class="card" onclick="openModal('俯臥腿彎舉', 'assets/images/俯臥腿彎舉.gif')"><img src="assets/images/俯臥腿彎舉.gif" alt="俯臥腿彎舉"><h3>俯臥腿彎舉</h3></div>
+                <div class="card" onclick="openModal('坐姿髖外展', 'assets/images/坐姿髖外展.gif')"><img src="assets/images/坐姿髖外展.gif" alt="坐姿髖外展"><h3>坐姿髖外展</h3></div>
+                <div class="card" onclick="openModal('坐姿髖內收', 'assets/images/坐姿髖內收.gif')"><img src="assets/images/坐姿髖內收.gif" alt="坐姿髖內收"><h3>坐姿髖內收</h3></div>
+            </div>
+            <button class="reset-btn" onclick="resetDay('Day2')">🔄 重置 Day 2 紀錄</button>
+        </div>
+
+        <!-- Day 3 內容 -->
+        <div id="Day3" class="tabcontent">
+            <h2>背部訓練 (請任選 3 個動作)</h2>
+            <div class="grid-container">
+                <div class="card" onclick="openModal('機械反向飛鳥', 'assets/images/機械反向飛鳥.gif')"><img src="assets/images/機械反向飛鳥.gif" alt="機械反向飛鳥"><h3>機械反向飛鳥</h3></div>
+                <div class="card" onclick="openModal('輔助引體向上', 'assets/images/輔助引體向上.gif')"><img src="assets/images/輔助引體向上.gif" alt="輔助引體向上" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'"><h3>輔助引體向上</h3></div>
+                <div class="card" onclick="openModal('滑輪下拉', 'assets/images/滑輪下拉.gif')"><img src="assets/images/滑輪下拉.gif" alt="滑輪下拉" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'"><h3>滑輪下拉</h3></div>
+                <div class="card" onclick="openModal('高位划船', 'assets/images/高位划船.gif')"><img src="assets/images/高位划船.gif" alt="高位划船" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'"><h3>高位划船</h3></div>
+                <div class="card" onclick="openModal('坐姿划船', 'assets/images/坐姿划船.gif')"><img src="assets/images/坐姿划船.gif" alt="坐姿划船"><h3>坐姿划船</h3></div>
+            </div>
+            <button class="reset-btn" onclick="resetDay('Day3')">🔄 重置 Day 3 紀錄</button>
+        </div>
+    </main>
+
+    <!-- 彈出視窗 (Modal) -->
+    <div id="exerciseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">動作名稱</h2>
+            <img id="modalImg" src="" alt="動作圖示" onerror="this.src='https://via.placeholder.com/300x200?text=圖片待補'">
+            
+            <div class="modal-tracker">
+                <div class="weight-control">
+                    <label>重量：</label>
+                    <input type="number" id="modalWeight" placeholder="0">
+                    <label>公斤</label>
+                </div>
+                <div class="sets-control">
+                    <label>完成組數：</label>
+                    <input type="checkbox" id="modalSet1" title="第 1 組">
+                    <input type="checkbox" id="modalSet2" title="第 2 組">
+                    <input type="checkbox" id="modalSet3" title="第 3 組">
+                    <input type="checkbox" id="modalSet4" title="第 4 組">
+                    <input type="checkbox" id="modalSet5" title="第 5 組">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
